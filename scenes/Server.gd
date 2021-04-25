@@ -17,7 +17,7 @@ func StartServer():
 	network.connect("peer_disconnected", self, "_Peer_Disconnected")
 	
 func _Peer_Conected(player_id):
-	rpc_id(player_id, "SetPlayer")
+	#rpc_id(player_id, "SetPlayer")
 	print("User " + str(player_id) + " connected")
 	current_players = current_players + 1
 	print("Current players on game: " + str(current_players) + "")
