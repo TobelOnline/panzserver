@@ -20,6 +20,11 @@ func _Peer_Conected(player_id):
 	#rpc_id(player_id, "SetPlayer")
 	print("User " + str(player_id) + " connected")
 	current_players = current_players + 1
+	print("Call RPC: " + str(player_id))
+	if current_players < 2:
+		rpc_id(player_id,"_set_party","white")
+	else:
+		rpc_id(player_id,"_set_party","black")
 	print("Current players on game: " + str(current_players) + "")
 	
 func _Peer_Disconnected(player_id):
